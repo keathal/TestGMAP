@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbGMAPModelStoreContainer" CdmEntityContainer="dbGMAPEntities">
+    <EntitySetMapping Name="T_MarkerType">
+      <EntityTypeMapping TypeName="IsTypeOf(dbGMAPModel.T_MarkerType)">
+        <MappingFragment StoreEntitySet="T_MarkerType">
+          <ScalarProperty Name="id_markerType" ColumnName="id_markerType" />
+          <ScalarProperty Name="color" ColumnName="color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Position">
+      <EntityTypeMapping TypeName="IsTypeOf(dbGMAPModel.T_Position)">
+        <MappingFragment StoreEntitySet="T_Position">
+          <ScalarProperty Name="id_position" ColumnName="id_position" />
+          <ScalarProperty Name="id_techUnit" ColumnName="id_techUnit" />
+          <ScalarProperty Name="id_markerType" ColumnName="id_markerType" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longtitude" ColumnName="longtitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_TechUnit">
+      <EntityTypeMapping TypeName="IsTypeOf(dbGMAPModel.T_TechUnit)">
+        <MappingFragment StoreEntitySet="T_TechUnit">
+          <ScalarProperty Name="id_techUnit" ColumnName="id_techUnit" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

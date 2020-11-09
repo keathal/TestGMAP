@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbGMAPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_MarkerType">
+    <Key>
+      <PropertyRef Name="id_markerType" />
+    </Key>
+    <Property Name="id_markerType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Position">
+    <Key>
+      <PropertyRef Name="id_position" />
+    </Key>
+    <Property Name="id_position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_techUnit" Type="int" Nullable="false" />
+    <Property Name="id_markerType" Type="int" Nullable="false" />
+    <Property Name="latitude" Type="float" Nullable="false" />
+    <Property Name="longtitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_TechUnit">
+    <Key>
+      <PropertyRef Name="id_techUnit" />
+    </Key>
+    <Property Name="id_techUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_T_Position_T_MarkerType">
+    <End Role="T_MarkerType" Type="Self.T_MarkerType" Multiplicity="1" />
+    <End Role="T_Position" Type="Self.T_Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_MarkerType">
+        <PropertyRef Name="id_markerType" />
+      </Principal>
+      <Dependent Role="T_Position">
+        <PropertyRef Name="id_markerType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Position_T_TechUnit">
+    <End Role="T_TechUnit" Type="Self.T_TechUnit" Multiplicity="1" />
+    <End Role="T_Position" Type="Self.T_Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_TechUnit">
+        <PropertyRef Name="id_techUnit" />
+      </Principal>
+      <Dependent Role="T_Position">
+        <PropertyRef Name="id_techUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbGMAPModelStoreContainer">
+    <EntitySet Name="T_MarkerType" EntityType="Self.T_MarkerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Position" EntityType="Self.T_Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_TechUnit" EntityType="Self.T_TechUnit" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_T_Position_T_MarkerType" Association="Self.FK_T_Position_T_MarkerType">
+      <End Role="T_MarkerType" EntitySet="T_MarkerType" />
+      <End Role="T_Position" EntitySet="T_Position" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Position_T_TechUnit" Association="Self.FK_T_Position_T_TechUnit">
+      <End Role="T_TechUnit" EntitySet="T_TechUnit" />
+      <End Role="T_Position" EntitySet="T_Position" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGMAP", "TestGMAP\TestGMAP.csproj", "{559DA1B0-6CE9-4D61-ABB4-505A9E75C80A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0810A42-786D-490F-8AA5-2C4217A8009D} = {B0810A42-786D-490F-8AA5-2C4217A8009D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{B0810A42-786D-490F-8AA5-2C4217A8009D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{559DA1B0-6CE9-4D61-ABB4-505A9E75C80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559DA1B0-6CE9-4D61-ABB4-505A9E75C80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559DA1B0-6CE9-4D61-ABB4-505A9E75C80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559DA1B0-6CE9-4D61-ABB4-505A9E75C80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0810A42-786D-490F-8AA5-2C4217A8009D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0810A42-786D-490F-8AA5-2C4217A8009D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0810A42-786D-490F-8AA5-2C4217A8009D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0810A42-786D-490F-8AA5-2C4217A8009D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16BC9217-3577-4FBF-8D9F-674F2F8DE6BF}
+	EndGlobalSection
+EndGlobal

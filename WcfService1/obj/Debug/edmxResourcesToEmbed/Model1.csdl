@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbGMAPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="T_MarkerType">
+    <Key>
+      <PropertyRef Name="id_markerType" />
+    </Key>
+    <Property Name="id_markerType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="T_Position" Relationship="Self.FK_T_Position_T_MarkerType" FromRole="T_MarkerType" ToRole="T_Position" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Position">
+    <Key>
+      <PropertyRef Name="id_position" />
+    </Key>
+    <Property Name="id_position" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_techUnit" Type="Int32" Nullable="false" />
+    <Property Name="id_markerType" Type="Int32" Nullable="false" />
+    <Property Name="latitude" Type="Double" Nullable="false" />
+    <Property Name="longtitude" Type="Double" Nullable="false" />
+    <NavigationProperty Name="T_MarkerType" Relationship="Self.FK_T_Position_T_MarkerType" FromRole="T_Position" ToRole="T_MarkerType" />
+    <NavigationProperty Name="T_TechUnit" Relationship="Self.FK_T_Position_T_TechUnit" FromRole="T_Position" ToRole="T_TechUnit" />
+  </EntityType>
+  <EntityType Name="T_TechUnit">
+    <Key>
+      <PropertyRef Name="id_techUnit" />
+    </Key>
+    <Property Name="id_techUnit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="T_Position" Relationship="Self.FK_T_Position_T_TechUnit" FromRole="T_TechUnit" ToRole="T_Position" />
+  </EntityType>
+  <Association Name="FK_T_Position_T_MarkerType">
+    <End Role="T_MarkerType" Type="Self.T_MarkerType" Multiplicity="1" />
+    <End Role="T_Position" Type="Self.T_Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_MarkerType">
+        <PropertyRef Name="id_markerType" />
+      </Principal>
+      <Dependent Role="T_Position">
+        <PropertyRef Name="id_markerType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Position_T_TechUnit">
+    <End Role="T_TechUnit" Type="Self.T_TechUnit" Multiplicity="1" />
+    <End Role="T_Position" Type="Self.T_Position" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_TechUnit">
+        <PropertyRef Name="id_techUnit" />
+      </Principal>
+      <Dependent Role="T_Position">
+        <PropertyRef Name="id_techUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbGMAPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_MarkerType" EntityType="Self.T_MarkerType" />
+    <EntitySet Name="T_Position" EntityType="Self.T_Position" />
+    <EntitySet Name="T_TechUnit" EntityType="Self.T_TechUnit" />
+    <AssociationSet Name="FK_T_Position_T_MarkerType" Association="Self.FK_T_Position_T_MarkerType">
+      <End Role="T_MarkerType" EntitySet="T_MarkerType" />
+      <End Role="T_Position" EntitySet="T_Position" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Position_T_TechUnit" Association="Self.FK_T_Position_T_TechUnit">
+      <End Role="T_TechUnit" EntitySet="T_TechUnit" />
+      <End Role="T_Position" EntitySet="T_Position" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

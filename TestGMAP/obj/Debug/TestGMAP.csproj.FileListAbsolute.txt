@@ -1,0 +1,14 @@
+D:\Моя папка\TestGMAP\TestGMAP\bin\Debug\TestGMAP.exe.config
+D:\Моя папка\TestGMAP\TestGMAP\bin\Debug\TestGMAP.exe
+D:\Моя папка\TestGMAP\TestGMAP\bin\Debug\TestGMAP.pdb
+D:\Моя папка\TestGMAP\TestGMAP\bin\Debug\GMap.NET.Core.dll
+D:\Моя папка\TestGMAP\TestGMAP\bin\Debug\GMap.NET.WindowsForms.dll
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.csprojAssemblyReference.cache
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.Properties.Resources.resources
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.csproj.GenerateResource.cache
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.csproj.CoreCompileInputs.cache
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.csproj.CopyComplete
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.exe
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.pdb
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.ActionForm.resources
+D:\Моя папка\TestGMAP\TestGMAP\obj\Debug\TestGMAP.TestGMAP.resources

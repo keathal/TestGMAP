@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1225/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1225/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1225/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_getAllPositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPositions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllPositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:editPosition" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRandomPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRandomPosition" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRandomPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRandomPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_changeMarkerColor_InputMessage">
+    <wsdl:part name="parameters" element="tns:changeMarkerColor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_changeMarkerColor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:changeMarkerColorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="getAllPositions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllPositions" message="tns:IService1_getAllPositions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllPositionsResponse" message="tns:IService1_getAllPositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editPosition" message="tns:IService1_editPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editPositionResponse" message="tns:IService1_editPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRandomPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addRandomPosition" message="tns:IService1_addRandomPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addRandomPositionResponse" message="tns:IService1_addRandomPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="changeMarkerColor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/changeMarkerColor" message="tns:IService1_changeMarkerColor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/changeMarkerColorResponse" message="tns:IService1_changeMarkerColor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllPositions">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllPositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editPosition">
+      <soap:operation soapAction="http://tempuri.org/IService1/editPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRandomPosition">
+      <soap:operation soapAction="http://tempuri.org/IService1/addRandomPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeMarkerColor">
+      <soap:operation soapAction="http://tempuri.org/IService1/changeMarkerColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:1225/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
